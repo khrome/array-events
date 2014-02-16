@@ -9,11 +9,11 @@ Is an Array extension class which adds asynchronous functions to Array as well a
 events
 ------
 
-*change* : fired any time an element is added 
+*change* : fired any time an element is added or removed
 
-*add* : fired any time an element is added or removed
+*add* : fired any time an element is added
 
-*remove* : fired any time an element is added 
+*remove* : fired any time an element is removed 
 
 emitter functions
 -----------------
