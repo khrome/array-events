@@ -1,9 +1,9 @@
 {
     "name": "array-events",
     "homepage": "https://github.com/khrome/array-events",
-    "version": "0.0.1-alpha",
+    "version": "0.0.2-alpha",
     "main": "array-events.js",
-    "description": "Async control for arrays",
+    "description": "Events and more for arrays",
     "keywords": [
         "array",
         "async",
