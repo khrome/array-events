@@ -9,7 +9,7 @@ describe('array-events', function(){
             var arr = new ArrayEvents();
             var changes = 0;
             arr.on('change', function(event){
-                changes++;
+                if(event.type == 'add') changes++;
             });
             setTimeout(function(){
                 changes.should.equal(2);
@@ -23,7 +23,7 @@ describe('array-events', function(){
             var arr = new ArrayEvents();
             var changes = 0;
             arr.on('change', function(event){
-                changes++;
+                if(event.type == 'add') changes++;
             });
             setTimeout(function(){
                 changes.should.equal(2);
@@ -37,7 +37,7 @@ describe('array-events', function(){
             var arr = new ArrayEvents([20, 15]);
             var changes = 0;
             arr.on('change', function(event){
-                changes++;
+                if(event.type == 'remove') changes++;
             });
             setTimeout(function(){
                 changes.should.equal(2);
@@ -47,11 +47,11 @@ describe('array-events', function(){
             arr.pop();
         });
         
-        it('from .push()', function(complete){
+        it('from .shift()', function(complete){
             var arr = new ArrayEvents([20, 15]);
             var changes = 0;
             arr.on('change', function(event){
-                changes++;
+                if(event.type == 'remove') changes++;
             });
             setTimeout(function(){
                 changes.should.equal(2);
