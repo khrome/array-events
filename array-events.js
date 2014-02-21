@@ -47,7 +47,7 @@
             var result = pop.apply(array, arguments);
             events.emit('change', {type : 'remove', target : item});
             events.emit('change', {type : 'fieldchange', field : 'length', value : array.length, previous : len});
-            events.emit('remove', item);
+            events.emit('remove', result);
             return result;
         });
         var shift = array.shift;
@@ -57,7 +57,7 @@
             var result = shift.apply(array, arguments);
             events.emit('change', {type : 'remove', target : item});
             events.emit('change', {type : 'fieldchange', field : 'length', value : array.length, previous : len});
-            events.emit('remove', item);
+            events.emit('remove', result);
             return result;
         });
         var unshift = array.unshift;
