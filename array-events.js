@@ -72,7 +72,7 @@
         });
         var splice = array.splice;
         objectField(array, 'splice', function(){
-            var args = Array.prototype.splice(arguments);
+            var args = Array.prototype.slice.call(arguments);
             var index = args.shift() || 0;
             var howMany = args.shift() || 0;
             var len = array.length;
@@ -81,12 +81,12 @@
                 if(wrap) item = wrap(item);
                 newArgs.push(item);
             });
-            var items = newArgs;
-            newArgs.unshift(howMany);
+            var items = args;
             newArgs.unshift(index);
+            newArgs.unshift(howMany);
             var removed;
             if(howMany){
-                removed = this.slice(index, howMany);
+                removed = array.slice.apply(array, [index, (index+howMany)]);
             }
             var result = splice.apply(array, newArgs);
             events.emit('change', {type : 'alter', removals : removed, additions : items});
@@ -98,18 +98,6 @@
                 events.emit('add', item);
             });
             return result;
-        });
-        
-        /*[attach AsyncArray methods to generate events]*/
-        [
-            'forAllEmissionsInPool', 'forAllEmissions', 'forEachEmission', 'uForEach', 
-            'combine', 'contains'//, 'erase'
-        ].forEach(function(fieldName){
-            objectField(array, fieldName, function(){
-                var args = Array.prototype.slice.call(arguments);
-                args.unshift(this);
-                return asyncarrays[fieldName].apply(asyncarrays, args);
-            });
         });
         
         objectField(array, 'erase', function(item){
@@ -133,6 +121,16 @@
         });
         objectField(array, 'emit', function(){
             return events.emit.apply(events, arguments);
+        });
+        
+        objectField(array, 'forEachEmission', function(iterator, callback){
+            return asyncarrays.forEachEmission(array, iterator, callback);
+        });
+        objectField(array, 'forAllEmissions', function(iterator, callback){
+            return asyncarrays.forAllEmissions(array, iterator, callback);
+        });
+        objectField(array, 'forAllEmissionsInPool', function(iterator, callback){
+            return asyncarrays.forAllEmissionsInPool(array, iterator, callback);
         });
         return array;
     }
