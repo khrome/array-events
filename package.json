@@ -1,7 +1,7 @@
 {
     "name": "array-events",
     "homepage": "https://github.com/khrome/array-events",
-    "version": "0.1.1-beta",
+    "version": "0.1.2-beta",
     "main": "array-events.js",
     "description": "Events and more for arrays",
     "keywords": [
