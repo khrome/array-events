@@ -139,7 +139,7 @@
         return array;
     }
     EventedArray.is = function(obj){
-        return obj['__construct__ '] === EventedArray;
+        return obj && obj['__construct__ '] === EventedArray;
     };
     return EventedArray;
 
