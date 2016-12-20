@@ -1,6 +1,10 @@
 array-events.js
 ===============
 
+[![NPM version](https://img.shields.io/npm/v/array-events.svg)]()
+[![npm](https://img.shields.io/npm/dt/array-events.svg)]()
+[![Travis](https://img.shields.io/travis/khrome/array-events.svg)]()
+
 Is an Array extension class which adds asynchronous functions to Array as well as firing events on 'remove', 'add' or 'change'
 
     var EventedArray = require('array-events');
