@@ -1,5 +1,6 @@
-var should = require("should");
-var ArrayEvents = require('./array-events');
+var should = require("chai").should();
+
+var ArrayEvents = require('../array-events');
 
 describe('array-events', function(){
     

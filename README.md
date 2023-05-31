@@ -7,8 +7,9 @@ array-events.js
 
 Is an Array extension class which adds asynchronous functions to Array as well as firing events on 'remove', 'add' or 'change'
 
-    var EventedArray = require('array-events');
-    var myArray = new EventedArray();
+    import { EventedArray } = from 'array-events/array-events.mjs';
+    // OR: const EventedArray = require('array-events');
+    const myArray = new EventedArray();
 
 events
 ------

@@ -1,8 +1,9 @@
 {
     "name": "array-events",
     "homepage": "https://github.com/khrome/array-events",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "main": "array-events.js",
+    "module": "array-events.mjs",
     "description": "Events and more for arrays",
     "keywords": [
         "array",
@@ -11,6 +12,12 @@
     ],
     "author": "Abbey Hawk Sparrow <@khrome> (http://patternweaver.com)",
     "contributors": [],
+    "scripts": {
+        "test": "npm run common-js-test; npm run import-test",
+        "import-test": "./node_modules/mocha/bin/mocha.js test/test.mjs",
+        "browser-test": "open http://localhost:8000/test/test.html; npx http-server -p 8000",
+        "common-js-test": "./node_modules/mocha/bin/mocha.js test/test.js"
+    },
     "bugs": {
         "url": "https://github.com/khrome/array-events/issues"
     },
@@ -20,14 +27,15 @@
         "url": "git://github.com/khrome/array-events.git"
     },
     "dependencies": {
+        "async-arrays": "*",
         "extended-emitter": "*",
-        "async-arrays": "*"
+        "extended-emitter-es6": "^1.1.3"
     },
     "devDependencies": {
-        "mocha": "*",
-        "should": "*"
+        "chai": "^4.3.7",
+        "environment-safe-chai": "^0.0.1",
+        "mocha": "^10.2.0"
     },
-    "optionalDependencies": {},
     "engines": {
         "node": "*"
     }

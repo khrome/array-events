@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/wolfy87-eventemitter@5.2.9/EventEmitter.min.js
+    "></script>
+    <script type="importmap"> { "imports": {
+        "chai": "http://localhost:8000/node_modules/chai/chai.js",
+        "environment-safe-chai": "/node_modules/environment-safe-chai/environment-safe-chai.js",
+        "sift": "/node_modules/sift/es5m/index.js",
+        "async-arrays/async-arrays.mjs": "/node_modules/async-arrays/async-arrays.mjs",
+        "extended-emitter-es6": "/node_modules/extended-emitter-es6/extended-emitter-es6.js",
+        "module": "/node_modules/browser-or-node/src/index.js",
+        "node:events": "/test/eventsShim.js",
+        "browser-or-node": "/node_modules/browser-or-node/src/index.js"
+    } } </script>
+    <script type="module" src="test.mjs"></script>
+    <script type="module">
+      mocha.run();
+    </script>
+  </body>
+</html>
