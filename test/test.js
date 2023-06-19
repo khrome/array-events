@@ -1,6 +1,6 @@
 var should = require("chai").should();
 
-var ArrayEvents = require('../array-events');
+var ArrayEvents = require('../array-events.cjs');
 
 describe('array-events', function(){
     

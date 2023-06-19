@@ -1,8 +1,8 @@
 {
     "name": "array-events",
     "homepage": "https://github.com/khrome/array-events",
-    "version": "1.1.0",
-    "main": "array-events.js",
+    "version": "2.0.0",
+    "main": "array-events.cjs",
     "module": "array-events.mjs",
     "description": "Events and more for arrays",
     "keywords": [
@@ -27,7 +27,7 @@
         "url": "git://github.com/khrome/array-events.git"
     },
     "dependencies": {
-        "async-arrays": "*",
+        "async-arrays": "2.0",
         "extended-emitter": "*",
         "extended-emitter-es6": "^1.1.3"
     },
