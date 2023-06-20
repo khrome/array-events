@@ -141,6 +141,7 @@
     EventedArray.is = function(obj){
         return obj && obj['__construct__ '] === EventedArray;
     };
+    EventedArray.EventedArray = EventedArray;
     return EventedArray;
 
 }));
